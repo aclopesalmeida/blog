@@ -2,6 +2,8 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="content-width;initial-scale=1.0"/>
+        <title>{{ config('app.name') }} | Admin </title>
+        
         
     <base href="/">
     
