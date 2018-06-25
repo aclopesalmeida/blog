@@ -1,0 +1,25 @@
+<header class="row" style="align-self: center" ng-if="autenticado == true">
+        <span class="icone-menu"><i class="fas fa-bars"></i></span>  
+        <span class="fechar-nav-btn pointer"><i class="far fa-times-circle"></i></span>  
+        <nav class="col-8 offset-2">
+            <ul>
+                <li><a href="/admin/home">Home</a></li>
+                <li>
+                    <a href="#">Conteúdos</a>
+                    <ul class="submenu">
+                         <li><a href="/admin/posts">Posts</a></li>
+                         <li><a href="/admin/categorias">Categorias</a></li>
+                         <li><a href="/" target="_self">Ver website</a></li>
+                    </ul>
+                 </li>
+                 <li>
+                         <a href="#">Definições</a>
+                         <ul class="submenu">
+                             <li><a href="/admin/utilizadores">Utilizadores</a></li>
+                             <li><a href="/admin/cargos">Cargos</a></li>
+                         </ul>
+                      </li>
+                <li><a href="#" ng-controller="adminLogout" ng-click="logout();">Logout</a></li>
+            </ul>
+        </nav>
+     </header>

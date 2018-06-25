@@ -1,0 +1,12 @@
+<div id="posts" class="card-columns">   
+        <a href="/posts/{{ post.titulo.replace(' ', '-')()}}{{post.id}}" ng-repeat="post in posts"  class="post card">
+            <div>
+                <h2 class="">{{ post.titulo }}</h2>
+                <p class="">{{ post.corpo | limitTo: 200 }}{{ post.corpo.length > 100 ? '...' : ''}}</p>
+                
+                <div ng-repeat="categoria in post.categorias">
+                    <span>{{categoria.designacao}}</span>
+                </div>
+            </div>
+            </a>
+    </div>

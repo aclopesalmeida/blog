@@ -1,0 +1,40 @@
+<div class="row">
+
+    <h1 class="col-12">Criar post</h1>
+
+    <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+    <div class="col-12" ng-include="'/partials/admin/partials/erros-validacao.html'"></div>
+
+    <form name="formularioPostsCriar" ng-submit="criarPost();" class="col-12" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" class="form-control" name="titulo" ng-model="post.titulo" placeholder="Título">
+        </div>
+
+        <div class="form-group">
+                <label for="introducao">Introdução:</label>
+                <textarea name="introducao" ng-model="post.introducao"></textarea>     
+        </div>
+
+      
+        <label for="corpo" class="margin-top">Texto principal:</label>
+        <textarea ui-tinymce="tinymceOptions" ng-model="post.corpo" name="corpo"></textarea>
+
+
+        <div class="form-group margin-top">
+                <label for="imagem">Selecione uma imagem:</label>
+                <input type="file" name="imagem" files-input ng-model="post.imagem"/>  
+        </div>
+
+        <div class="form-group">
+                <span class="margin-top">Categorias:</span>
+                <select name="categorias" ng-model="post.categorias" multiple ng-options="categoria.designacao for categoria in categorias track by categoria.id">
+                </select>
+        </div>
+    
+        
+        <button class="btn-primary margin-top">Criar post</button>
+
+    </form>
+</div>

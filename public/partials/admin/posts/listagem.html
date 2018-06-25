@@ -1,0 +1,23 @@
+<div class="row">
+        <div class="criar-btn">
+                <a href="/admin/posts/criar">Criar novo post</a> 
+        </div>
+        
+        <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+            
+    
+        <div class="col-12">
+            <div class="row header">
+                    <div class="col-6">Post</div>
+                    <div class="col-6">Opções</div>
+            </div>
+            <div class="row data" ng-repeat="post in posts">
+                        <p class="col-6">{{ post.titulo }}</p>
+                        <div class="col-6 opcoes">
+                                <a href="/admin/posts/{{ post.titulo.replace(' ', '-') }}/{{ post.id }}">Ver</a> | 
+                                <a href="/admin/posts/editar/{{ post.titulo.replace(' ', '-') }}/{{post.id}}">Editar</a> | 
+                                <a href="/admin/posts/apagar/{{post.id}}">Apagar</a>
+                        </div>
+            </div>
+        </div>
+    </div>

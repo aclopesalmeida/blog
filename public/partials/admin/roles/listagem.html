@@ -1,0 +1,21 @@
+<div class="row">
+
+    <div class="criar-btn">
+            <a href="/admin/cargos/criar">Criar novo cargo</a> 
+    </div>
+        
+    <div ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+
+    <div class="col-12">
+        <div class="row header">
+            <div class="col-6">Cargo</div>
+            <div class="col-6">Opções</div>
+        </div>
+        <div class="row data" ng-repeat="cargo in cargos">
+           <div class="col-6">{{cargo.designacao}}</div>
+           <div class="col-6 opcoes">
+               <a href="/admin/cargos/editar/{{cargo.id}}">Editar</a> | 
+               <a href="/admin/cargos/apagar/{{cargo.id}}">Apagar</a>
+           </div>
+    </div>
+</div>

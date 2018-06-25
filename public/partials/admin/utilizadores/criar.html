@@ -1,0 +1,34 @@
+<div class="row">
+
+        <h1 class="col-12">Criar utilizador</h1>
+        
+            <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+            <div class="col-12" ng-include="'/partials/admin/partials/erros-validacao.html'"></div>
+        
+        <form class="col-12" ng-submit="criarUtilizador();" name="formularioCriarUtilizador">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" ng-model="utilizador.nome" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" ng-model="utilizador.email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" ng-model="utilizador.password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirmation">Repetir password:</label>
+                <input type="password" name="password_confirmation" ng-model="utilizador.password_confirmation">
+            </div>
+
+            <label for="cargo">Cargo:</label>
+            <select name="cargo" ng-model="utilizador.role_id" ng-options="cargo.id as cargo.designacao for cargo in cargos"></select>
+
+            <button class="btn-primary margin-top">Criar utilizador</button>
+        </form>
+</div>

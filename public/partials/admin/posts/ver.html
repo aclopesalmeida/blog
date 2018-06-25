@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="post col-12 no-padding col-md-10 offset-md-1" ng-controller="post">
+        <h1>{{ post.titulo }}</h1>
+        <img src="/imagens/posts/{{ post.imagem }}" alt="{{post.titulo}}" class="img-fluid" ng-if="post.imagem != null">
+        <p ng-bind-html="post.corpo"></p>
+    
+        <div ng-repeat="tag in post.tags">
+            <span>{{tag.designacao}}</span>
+        </div>
+    
+        <h4>Comentários</h4>
+            <div ng-repeat="comentario in post.comentarios" ng-if="post.comentarios.length > 0">
+                <p>{{comentario.autor}} | <span class="comentario-info">{{comentario.created_at | date : 'MM/dd/yyyy'}}</span></p>
+                <p class="comentario">{{comentario.comentario}}</p>
+            </div>
+            <p ng-if="post.comentarios.length == 0">Sem comentários.</p>
+    </div>
+    
+    </div>
+        

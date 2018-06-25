@@ -1,0 +1,19 @@
+<div class="row">
+    <h1 class="col-12">Tem a certeza que deseja apagar este utilizador?</h1>
+    
+        <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+
+        <div class="col-12">
+            <label for="nome">Utilizador:</label>
+            <input type="text" name="nome" value="{{utilizador.nome}}" ng-model="utilizador.nome">
+
+
+            <label for="email">Email:</label>
+            <input type="text" value="{{utilizador.email}}" ng-model="utilizador.email">
+
+            <form ng-submit="apagarUtilizador();" name="formularioApagarUtilizador">
+                <input type="hidden" value="{{utilizador.id}}" name="id">
+                <button class="btn-primary margin-top">Apagar utilizador</button>
+            </form>
+        </div>
+</div>

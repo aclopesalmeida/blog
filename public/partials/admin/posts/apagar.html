@@ -1,0 +1,22 @@
+<div class="row">
+
+    <h1 class="col-12">Tem a certeza que deseja apagar este post?</h1>
+
+    <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+    <div class="col-12" ng-include="'/partials/admin/partials/erros-validacao.html'"></div>
+
+
+    <div class="post col-12">
+            <h3>{{ post.titulo }}</h3>
+            <p>{{ post.introducao }}</p>
+            <img src="/imagens/posts/{{ post.imagem }}" alt="{{post.titulo}}" class="img-fluid" ng-if="post.imagem != null">
+            <p>{{ post.corpo}}</p>
+    </div>
+
+
+        <form name="formularioApagarPost" ng-submit="apagarPost();">
+           <input type="hidden" name="id" value="{{ post.id }}"/>
+           <input type="hidden" name="_token">
+            <button class="btn-primary">Apagar post</button>
+       
+    </div>

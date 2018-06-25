@@ -1,0 +1,20 @@
+<div id="admin-home-login" class="row">
+    <form ng-submit="login();" id="formulario-autenticacao" class="col-12 col-sm-6 col-md-5 col-lg-4">
+        
+        <div class="form-group">
+             <input type="text" name="email" placeholder="Email" ng-model="utilizador.email">
+        </div>
+
+        <div class="form-group">
+            <input type="password" placeholder="Password" ng-model="utilizador.password">
+        </div>
+     
+        <button class="btn-primary">Login</button>
+        <p id="info-teste">
+                Para fins de teste utilize, por favor, as seguintes credenciais:<br>
+                Email: teste@teste.com | Password: teste
+        </p>
+    </form>
+  
+</div>
+

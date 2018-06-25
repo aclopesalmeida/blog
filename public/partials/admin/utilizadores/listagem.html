@@ -1,0 +1,26 @@
+<div class="row">
+
+    <div class="criar-btn">
+        <a href="/admin/utilizadores/criar">Criar novo utilizador</a> 
+    </div>
+
+    <div ng-include="'/partials/admin/partials/status-mensagens.html'"></div> 
+
+    <div class="col-12 header">
+        <div class="row">
+            <div class="col-4">Utilizador</div>
+            <div class="col-4">Email</div>
+            <div class="col-4">Opções</div>
+        </div>
+    </div>
+    <div class="col-12 data" ng-repeat="utilizador in utilizadores">
+        <div class="row">
+            <div class="col-4">{{utilizador.nome}}</div>
+            <div class="col-4">{{utilizador.email}}</div>
+            <div class="col-4 opcoes">
+                <a href="/admin/utilizadores/editar/{{utilizador.id}}">Editar</a> |
+                <a href="/admin/utilizadores/apagar/{{utilizador.id}}">Apagar</a>
+            </div>
+     </div>
+    </div>  
+</div>

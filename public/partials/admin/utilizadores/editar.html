@@ -1,0 +1,42 @@
+<div class="row">
+
+        <h1 class="col-12">Editar utilizador</h1>
+        
+            <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+            <div class="col-12" ng-include="'/partials/admin/partials/erros-validacao.html'"></div>
+        
+    
+        <form class="col-12" ng-submit="editarUtilizador();" name="formularioEditarUtilizador">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" ng-model="utilizador.nome" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" ng-model="utilizador.email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <span class="margin-top">Cargo:</span>
+                <select name="cargo" ng-model="utilizador.cargo" ng-options="cargo.designacao for cargo in cargos track by cargo.id"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" ng-model="utilizador.password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                    <label for="nova_password">Nova password:</label>
+                    <input type="password" name="nova_password" ng-model="utilizador.nova_password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                    <label for="password_confirmation">Repetir password:</label>
+                    <input type="password" name="nova_password_confirmation" ng-model="utilizador.nova_password_confirmation" class="form-control">
+            </div>
+
+            <button class="btn-primary margin-top">Editar utilizador</button>
+        </form>
+</div>

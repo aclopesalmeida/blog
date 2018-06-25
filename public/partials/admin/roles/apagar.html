@@ -1,0 +1,16 @@
+<div class="row">
+    <h1 class="col-12">Tem a certeza que deseja apagar este cargo?</h1>
+    
+    <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+    <div class="col-12" ng-include="'/partials/admin/partials/erros-validacao.html'"></div>
+
+        <div class="col-12">
+            <label for="nome">Cargo:</label>
+            <span>{{ cargo.designacao }}</span>
+
+            <form ng-submit="apagarCargo();" name="formularioApagarCargo">
+                <input type="hidden" value="{{cargo.id}}" name="id">
+                <button class="btn-primary">Apagar cargo</button>
+            </form>
+        </div>
+</div>

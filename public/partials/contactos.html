@@ -1,0 +1,43 @@
+<div class="row">
+    <h1 class="col-12">Contactos</h1>
+
+    <div class="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+    <div class="col-12" ng-include="'/partials/admin/partials/erros-validacao.html'"></div>
+
+
+    <div class="col-12">
+        <div class="row" id="contactos">
+            <form name="formularioContacto" ng-submit="enviarEmail()" novalidate class="col-12 col-md-5">
+
+                <div class="form-group">
+                <input type="text" name="nome" ng-model="model.nome" placeholder="Nome" class="form-control">
+                </div>
+
+                <div class="form-group">
+                <input type="text" name="email" ng-model="model.email" placeholder="Email" required class="form-control">
+                </div>
+                <div class="helper-block" ng-messages="formularioContacto.email.$error" ng-if="formularioContacto.email.$touched || formularioContacto.$submitted">
+                    <div ng-messages-include="/mensagens/validacao.html"></div>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="text" name="assunto" ng-model="model.assunto" placeholder="Assunto" class="form-control">
+                </div>
+
+
+                <div class="form-group">
+                <textarea name="mensagem" ng-model="model.mensagem" placeholder="Mensagem" required class="form-control"></textarea>
+                </div>
+                <div class="helper-block" ng-messages="formularioContacto.mensagem.$error" ng-if="formularioContacto.$submitted || formularioContacto.mensagem.$touched">
+                    <div ng-messages-include="/mensagens/validacao.html"></div>
+                </div>
+                <button>Enviar</button>
+            </form>
+
+            <div class="col-12 col-md-4">
+                <p>Entre em contacto através do email nomeblog@nomeblog.com ou do formulário.</p>
+            </div>
+        </div>
+    </div>
+</div>

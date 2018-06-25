@@ -1,0 +1,57 @@
+<div class="row">
+
+    <h1 class="col-12">Editar post</h1>
+
+    <div clasS="col-12" ng-include="'/partials/admin/partials/status-mensagens.html'"></div>
+    <div class="col-12" ng-include="'/partials/admin/partials/erros-validacao.html'"></div>
+
+    <form name="formularioEditarPost" ng-submit="editarPost();" class="admin-formulario-criar-editar col-12">
+        <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" class="form-control" ng-model="post.titulo">
+        </div>
+
+        <div class="form-group">
+            <label for="introducao">Introdução:</label>
+            <textarea name="introducao" class="form-control" ng-model="post.introducao"></textarea>
+        </div>
+
+        <label for="corpo" class="margin-top">Texto principal:</label>
+        <textarea ui-tinymce="tinymceOptions" ng-model="post.corpo" name="corpo" ng-bind-html="post.corpo"></textarea>
+        
+        <div class="form-group margin-top">
+            <label for="imagem">Selecione uma imagem:</label>
+            <input type="file" name="imagem" files-input ng-model="post.imagem"/>    
+    </div>
+
+        <span class="margin-top">Categorias:</span>
+        <select name="categorias" ng-model="post.categorias" multiple ng-options="categoria.designacao for categoria in categorias track by categoria.id">
+        </select>
+
+        <input type="hidden" name="id" ng-model="post.id">
+
+        <button class="btn-primary margin-top">Editar post</button>
+    </form>
+
+
+    <h2 class="col-12  margin-top">Comentários</h2>
+
+    <div class="col-12">
+        <div class="admin-comentario margin-top" ng-repeat="comentario in post.comentarios">
+            <div class="row">
+                <div class="col-8">
+                        <p>{{comentario.autor}} <span class="comentario-info">{{comentario.created_at | date : "MM/dd/yyyy"}}</span></p>
+                        <p>{{comentario.comentario}}</p>
+                </div>
+                <div class="col-4">
+                        <form name="formularioApagarComentario" ng-submit="apagarComentario(comentario.id);">
+                            <button class="apagar-comentario" title="Apagar">
+                                <i class="fas fa-window-close"></i>
+                            </button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
