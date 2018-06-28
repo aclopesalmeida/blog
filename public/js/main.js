@@ -76,25 +76,24 @@ $(function() {
        };
    
        function ativarMenuResponsivo() {
-           // $seccaoSite = $('body').attr('id') == 'admin' ? 'admin' : 'frontend';
-           // $width = $seccaoSite == 'frontend' ? 1230 : 768;
-   
            if($(window).outerWidth() < 576) {
                $iconeMenuResponsivo.addClass('fixed');    
            }
            else {
                $iconeMenuResponsivo.removeClass('fixed');
            }
+
+           if($(window).outerWidth() < 768){
+                if($seccaoSite == 'admin' && $('#icone-menu-wrapper').length == 0) {
+                        $iconeMenuResponsivo.wrap('<div class="col-8 offset-2" id="icone-menu-wrapper"></div>');
+                }
+            }
+           else {
+                $iconeMenuResponsivo.unwrap();
+           }
        }
    
-       if($(window).outerWidth() < 768){
-        if($seccaoSite == 'admin') {
-                $iconeMenuResponsivo.wrap('<div class="col-8 offset-2" id="icone-menu-wrapper"></div>');
-        }
-        }
-       else {
-            $iconeMenuResponsivo.unwrap();
-       }
+
    
    
        function alterarPosicaoPainelControloAdmin() 
